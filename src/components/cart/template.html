@@ -1,0 +1,77 @@
+<div class="cart">
+  <div class="uersInfo">
+      <div class="table">
+        <table>
+          <tbody>
+            <tr>
+              <th width="30%" class="lt">收&nbsp;货&nbsp;人</th>
+              <td width="50%">刘希 &nbsp;先生</td>
+
+            </tr>
+            <tr>
+              <th width="30%" class="lt">电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话</th>
+              <td width="50%">158**********</td>
+
+            </tr>
+            <tr>
+              <th width="30%" class="lt">收货地址</th>
+              <td width="70%">上海市浦东新区航头镇航都路18号-黑马程序员</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="more">
+        <div>修改</div>
+        <div>></div>
+      </div>
+  </div>
+
+  <div class="main-content">
+    <div class="fast-buy">
+      <div class="fast-cart">
+        <span>闪送超市</span>
+      </div>
+      <div class="addBtn"><span>凑单专区</span></div>
+    </div>
+    <p class="send">￥0起送，22点后满￥69运费5元起，不满￥69运10元起</p>
+    <div class="bookTime">
+      <span>收货时间</span>
+      <span class="time">&nbsp;08:00-09:00</span>
+      <span class="book">可预定 ></span>
+    </div>
+    <div class="tips">
+      收货备注&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" placeholder="可以写入100字">
+    </div>
+  </div>
+
+  <div class="selectedItem">
+    <ul>
+      <li v-for="item in productList" :key="item.id">
+        <img :src="item.img" alt="">
+        <div class="des">
+          <p class="title">{{item.name}}</p>
+          <p class="weight">{{item.specifics}}</p>
+          <p class="price">
+            <span class="nowPrice">￥{{item.partner_price}}</span>
+            <span class="oldPrice">￥{{item.price}}</span>
+          </p>
+        </div>
+        <!-- <div class="mui-numbox data-numbox-min=0 :data-numbox-max= 'item.store_nums'">
+                  <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+                  <input class="mui-input-numbox" type="number">
+                  <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+                </div> -->
+        <numberBox v-model="item.count"></numberBox>
+        <!-- <span>{{$store.getters.totalCount}}</span> -->
+
+      </li>
+    </ul>
+  </div>
+
+  <div class="selected">
+    全选 共: <span>￥{{totalPrice}}</span>
+    <div class="choosed">选好了</div>
+  </div>
+
+</div>

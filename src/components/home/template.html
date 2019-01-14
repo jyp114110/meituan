@@ -1,0 +1,47 @@
+<div class="home">
+  <div class="home-header">
+    <h1>黑马程序员-上海前端学院</h1>
+  </div>
+  <div class="main">
+    <router-view></router-view>
+  </div>
+
+  <div class="home-bottom">
+    <router-link to='/list' class="route" @click="changeActive(0)">
+      <span class="fa fa-home"></span>
+      首页
+    </router-link>
+    <router-link to='/' class="route" @click="changeActive(1)">
+      <span class="fa fa-send"></span>
+      飞速购
+    </router-link>
+    <router-link to='/cart' class="route" @click="changeActive(1)">
+      <span class="fa fa-shopping-cart"></span>
+       <span class="count">{{$store.getters.totalCount}}</span>
+      购物车
+    </router-link>
+    <router-link to='/' class="route" @click="changeActive(1)">
+      <span class="fa fa-user"></span>
+      我的
+    </router-link>
+  </div>
+
+  <!-- <nav class="mui-bar mui-bar-tab">
+    <a class="mui-tab-item" href="#tabbar">
+      <span class="mui-icon mui-icon-home"></span>
+      <span class="mui-tab-label">首页</span>
+    </a>
+    <a class="mui-tab-item" href="#tabbar-with-chat">
+      <span class="mui-icon mui-icon-email"><span class="mui-badge">9</span></span>
+      <span class="mui-tab-label">消息</span>
+    </a>
+    <a class="mui-tab-item" href="#tabbar-with-contact">
+      <span class="mui-icon mui-icon-contact"></span>
+      <span class="mui-tab-label">通讯录</span>
+    </a>
+    <a class="mui-tab-item mui-active" href="#tabbar-with-map">
+      <span class="mui-icon mui-icon-gear"></span>
+      <span class="mui-tab-label">设置</span>
+    </a>
+  </nav> -->
+</div>

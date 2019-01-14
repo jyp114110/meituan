@@ -1,0 +1,43 @@
+<div class="list">
+  <div class="aside">
+    <ul>
+      <li v-for="item in categoryList" :key="item.id" @click="selectCate(item.id)">
+        <span
+          :class="{hot:item.icon ===''?true : false,
+          active: item.id == activeId}">
+          {{item.name}}
+        </span>
+      </li>
+    </ul>
+  </div>
+  <div class="goodsList">
+    <!-- <div class="goodsList-header">
+      <p>全部分类</p>
+      <p>综合排序</p>
+    </div> -->
+
+    <div class="content">
+      <ul>
+        <li v-for="item in productArr" :key="item.id">
+            <img :src="item.img" alt="">
+            <div class="des">
+              <p class="title">{{item.name}}</p>
+              <p class="weight">{{item.specifics}}</p>
+              <p class="price">
+                <span class="nowPrice">￥{{item.partner_price}}</span>
+                <span class="oldPrice">￥{{item.price}}</span>
+              </p>
+            </div>
+            <!-- <div class="mui-numbox data-numbox-min=0 :data-numbox-max= 'item.store_nums'">
+              <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+              <input class="mui-input-numbox" type="number">
+              <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+            </div> -->
+             <numberBox v-model="item.count" @addProducts="addProducts(item.category_id,item.id)"></numberBox>
+             <!-- <span>{{$store.getters.totalCount}}</span> -->
+
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

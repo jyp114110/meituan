@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    const arr =[
+      {cateId: "104751", id: "2435", count: 7},
+      {cateId: "104751", id: "10645", count: 6}]
+
+    arr1=[1,2,3]
+    const a = arr1.reduce((prev,item)=>{
+      return prev + item
+    })
+    console.log(a);
+
+    const b =  arr.reduce((data,item) => {
+           data[item.id] = {
+             count : item.count,
+
+           }
+           console.log(data);
+
+           return data
+
+        },{})
+
+  </script>
+
+</body>
+</html>
